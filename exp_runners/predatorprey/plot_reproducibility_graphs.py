@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
+#import pandas as pd
 
 #Commented sections in green (with ''' ''') are for when we have all data
 #naming convention: method, number of agents, size of grid, penalty, seed
@@ -37,10 +37,13 @@ for m in methods:
 #13 avg return
 
 for i in name_lst:
-    #print(str('data/local/Junk/'+i+'/progress.csv'))
-    data = pd.read_csv(str('data/local/'+i+'/progress.csv')) #, delimiter=',', skip_header=1)
-    globals()[str('env_step_' + i)] = data['TotalEnvSteps'].to_numpy()
-    globals()[str('avg_return_' + i)] = data['AverageReturn'].to_numpy()
+    print(str('data/local/Junk/'+i+'/progress.csv'))
+    #data = pd.read_csv(str('data/local/'+i+'/progress.csv')) #, delimiter=',', skip_header=1)
+    
+    data = np.genfromtxt(str('data/local/'+i+'/progress.csv'), delimiter=',', skip_header=0, dtype=str)
+    
+    globals()[str('env_step_' + i)] = data[1:,np.where(data[0,:]=='TotalEnvSteps')[0]].astype('float64').flatten()
+    globals()[str('avg_return_' + i)] = data[1:,np.where(data[0,:]=='AverageReturn')[0]].astype('float64').flatten()
 
 #Calculate averages
 #Ignore error: undefined name
