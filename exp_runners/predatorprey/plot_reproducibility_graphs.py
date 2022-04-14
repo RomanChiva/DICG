@@ -48,38 +48,6 @@ for i in name_lst:
 #Calculate averages
 #Ignore error: undefined name
 
-'''avg_return_cent_8_8_0 = np.average((avg_return_cent_8_8_0_1,
-                                    avg_return_cent_8_8_0_2,
-                                    avg_return_cent_8_8_0_3), axis=0)
-
-avg_return_cent_8_8_n15 = np.average((avg_return_cent_8_8_n15_1,
-                                    avg_return_cent_8_8_n15_2,
-                                    avg_return_cent_8_8_n15_3), axis=0)
-
-avg_return_dec_8_8_0 = np.average((avg_return_dec_8_8_0_1,
-                                    avg_return_dec_8_8_0_2,
-                                    avg_return_dec_8_8_0_3), axis=0)
-
-avg_return_dec_8_8_n15 = np.average((avg_return_dec_8_8_n15_1,
-                                    avg_return_dec_8_8_n15_2,
-                                    avg_return_dec_8_8_n15_3), axis=0)
-
-avg_return_dicgcent_8_8_0 = np.average((avg_return_dicgcent_8_8_0_1,
-                                    avg_return_dicgcent_8_8_0_2,
-                                    avg_return_dicgcent_8_8_0_3), axis=0)
-
-avg_return_dicgcent_8_8_n15 = np.average((avg_return_dicgcent_8_8_n15_1,
-                                    avg_return_dicgcent_8_8_n15_2,
-                                    avg_return_dicgcent_8_8_n15_3), axis=0)
-
-avg_return_dicgdec_8_8_0 = np.average((avg_return_dicgdec_8_8_0_1,
-                                    avg_return_dicgdec_8_8_0_2,
-                                    avg_return_dicgdec_8_8_0_3), axis=0)
-
-avg_return_dicgdec_8_8_n15 = np.average((avg_return_dicgdec_8_8_n15_1,
-                                    avg_return_dicgdec_8_8_n15_2,
-                                    avg_return_dicgdec_8_8_n15_3), axis=0)'''
-
 avg_return_cent_8_8_0 = np.average((avg_return_cent_8_8_0_1,avg_return_cent_8_8_0_2,avg_return_cent_8_8_0_1), axis=0)
 avg_return_dec_8_8_0 = np.average((avg_return_dec_8_8_0_1,avg_return_dec_8_8_0_2,avg_return_dec_8_8_0_1), axis=0)
 avg_return_dicgcent_8_8_0 = np.average((avg_return_dicgcent_8_8_0_1,avg_return_dicgcent_8_8_0_2,avg_return_dicgcent_8_8_0_1), axis=0)
@@ -89,6 +57,17 @@ std_cent_8_8_0 = np.std((avg_return_cent_8_8_0_1,avg_return_cent_8_8_0_2,avg_ret
 std_dec_8_8_0 = np.std((avg_return_dec_8_8_0_1,avg_return_dec_8_8_0_2,avg_return_dec_8_8_0_1), axis=0)
 std_dicgcent_8_8_0 = np.std((avg_return_dicgcent_8_8_0_1,avg_return_dicgcent_8_8_0_2,avg_return_dicgcent_8_8_0_1), axis=0)
 std_dicgdec_8_8_0 = np.std((avg_return_dicgdec_8_8_0_1,avg_return_dicgdec_8_8_0_2,avg_return_dicgdec_8_8_0_1), axis=0)
+
+
+avg_return_cent_8_8_n15 = np.average((avg_return_cent_8_8_n15_1,avg_return_cent_8_8_n15_2,avg_return_cent_8_8_n15_1), axis=0)
+avg_return_dec_8_8_n15 = np.average((avg_return_dec_8_8_n15_1,avg_return_dec_8_8_n15_2,avg_return_dec_8_8_n15_1), axis=0)
+avg_return_dicgcent_8_8_n15 = np.average((avg_return_dicgcent_8_8_n15_1,avg_return_dicgcent_8_8_n15_2,avg_return_dicgcent_8_8_n15_1), axis=0)
+avg_return_dicgdec_8_8_n15 = np.average((avg_return_dicgdec_8_8_n15_1,avg_return_dicgdec_8_8_n15_2,avg_return_dicgdec_8_8_n15_1), axis=0)
+
+std_cent_8_8_n15 = np.std((avg_return_cent_8_8_n15_1,avg_return_cent_8_8_n15_2,avg_return_cent_8_8_n15_1), axis=0)
+std_dec_8_8_n15 = np.std((avg_return_dec_8_8_n15_1,avg_return_dec_8_8_n15_2,avg_return_dec_8_8_n15_1), axis=0)
+std_dicgcent_8_8_n15 = np.std((avg_return_dicgcent_8_8_n15_1,avg_return_dicgcent_8_8_n15_2,avg_return_dicgcent_8_8_n15_1), axis=0)
+std_dicgdec_8_8_n15 = np.std((avg_return_dicgdec_8_8_n15_1,avg_return_dicgdec_8_8_n15_2,avg_return_dicgdec_8_8_n15_1), axis=0)
 
 
 #Plotting
@@ -104,14 +83,14 @@ ax[0].fill_between(env_step_dec_8_8_0_1/(10**6), avg_return_dec_8_8_0-2*std_dec_
 ax[0].fill_between(env_step_dicgcent_8_8_0_1/(10**6), avg_return_dicgcent_8_8_0-2*std_dicgcent_8_8_0,avg_return_dicgcent_8_8_0+2*std_dicgcent_8_8_0, color = 'blue', alpha = 0.5)
 ax[0].fill_between(env_step_dicgdec_8_8_0_1/(10**6), avg_return_dicgdec_8_8_0-2*std_dicgdec_8_8_0,avg_return_dicgdec_8_8_0+2*std_dicgdec_8_8_0, color = 'red', alpha = 0.5)
 ax[0].axhline(80, color = 'black',linestyle ='dashed')
-ax[1].plot(env_step_cent_8_8_0_1/(10**6), avg_return_cent_8_8_0, label = 'CENT', color = 'orange')
-ax[1].plot(env_step_dec_8_8_0_1/(10**6), avg_return_dec_8_8_0, label = 'DEC', color = 'green')
-ax[1].plot(env_step_dicgcent_8_8_0_1/(10**6), avg_return_dicgcent_8_8_0, label = 'DICGCE', color = 'blue')
-ax[1].plot(env_step_dicgdec_8_8_0_1/(10**6), avg_return_dicgdec_8_8_0,label = 'DICGDE', color = 'red')
-ax[1].fill_between(env_step_cent_8_8_0_1/(10**6), avg_return_cent_8_8_0-2*std_cent_8_8_0,avg_return_cent_8_8_0+2*std_cent_8_8_0, color = 'orange', alpha = 0.5)
-ax[1].fill_between(env_step_dec_8_8_0_1/(10**6), avg_return_dec_8_8_0-2*std_dec_8_8_0,avg_return_dec_8_8_0+2*std_dec_8_8_0, color = 'green', alpha = 0.5)
-ax[1].fill_between(env_step_dicgcent_8_8_0_1/(10**6), avg_return_dicgcent_8_8_0-2*std_dicgcent_8_8_0,avg_return_dicgcent_8_8_0+2*std_dicgcent_8_8_0, color = 'blue', alpha = 0.5)
-ax[1].fill_between(env_step_dicgdec_8_8_0_1/(10**6), avg_return_dicgdec_8_8_0-2*std_dicgdec_8_8_0,avg_return_dicgdec_8_8_0+2*std_dicgdec_8_8_0, color = 'red', alpha = 0.5)
+ax[1].plot(env_step_cent_8_8_n15_1/(10**6), avg_return_cent_8_8_n15, label = 'CENT', color = 'orange')
+ax[1].plot(env_step_dec_8_8_n15_1/(10**6), avg_return_dec_8_8_n15, label = 'DEC', color = 'green')
+ax[1].plot(env_step_dicgcent_8_8_n15_1/(10**6), avg_return_dicgcent_8_8_n15, label = 'DICGCE', color = 'blue')
+ax[1].plot(env_step_dicgdec_8_8_n15_1/(10**6), avg_return_dicgdec_8_8_n15,label = 'DICGDE', color = 'red')
+ax[1].fill_between(env_step_cent_8_8_n15_1/(10**6), avg_return_cent_8_8_n15-2*std_cent_8_8_n15,avg_return_cent_8_8_n15+2*std_cent_8_8_n15, color = 'orange', alpha = 0.5)
+ax[1].fill_between(env_step_dec_8_8_n15_1/(10**6), avg_return_dec_8_8_n15-2*std_dec_8_8_n15,avg_return_dec_8_8_n15+2*std_dec_8_8_n15, color = 'green', alpha = 0.5)
+ax[1].fill_between(env_step_dicgcent_8_8_n15_1/(10**6), avg_return_dicgcent_8_8_n15-2*std_dicgcent_8_8_n15,avg_return_dicgcent_8_8_n15+2*std_dicgcent_8_8_n15, color = 'blue', alpha = 0.5)
+ax[1].fill_between(env_step_dicgdec_8_8_n15_1/(10**6), avg_return_dicgdec_8_8_n15-2*std_dicgdec_8_8_n15,avg_return_dicgdec_8_8_n15+2*std_dicgdec_8_8_n15, color = 'red', alpha = 0.5)
 ax[1].axhline(80, color = 'black',linestyle ='dashed')
 ax[0].set_ylabel('Average Return')
 ax[1].set_xlabel('Total Environment Steps [10$^6$]')
