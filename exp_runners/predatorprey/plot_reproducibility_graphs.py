@@ -21,13 +21,11 @@ seed    = [1]
 
 
 name_lst = []
-avg_lst = []
 
 for m in methods:
     for a in agents:
         for g in grid:
             for p in penalty:
-                avg_lst.append(str(m+'_'+str(a)+'_'+str(g)+'_'+str(p)))
                 for s in seed:
                     name_lst.append(str(m+'_'+str(a)+'_'+str(g)+'_'+str(p)+'_'+str(s)))
 
@@ -38,6 +36,7 @@ for m in methods:
 for i in name_lst:
     #print(str('data/local/Junk/'+i+'/progress.csv'))
     data = np.genfromtxt(str('data/local/Junk/'+i+'/progress.csv'), delimiter=',', skip_header=1)
+    #data = np.genfromtxt(str('data/local/'+i+'/progress.csv'), delimiter=',', skip_header=1)
     globals()[str('env_step_'+i)] = data[:,4]
     globals()[str('avg_return_'+i)] = data[:,13]
 
