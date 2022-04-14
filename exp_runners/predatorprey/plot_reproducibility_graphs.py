@@ -21,13 +21,11 @@ seed    = [1,2]
 
 
 name_lst = []
-avg_lst = []
 
 for m in methods:
     for a in agents:
         for g in grid:
             for p in penalty:
-                avg_lst.append(str(m+'_'+str(a)+'_'+str(g)+'_'+str(p)))
                 for s in seed:
                     if s>1:
                         if a ==8 and g == 8:
